@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -10,11 +11,15 @@ import Head from "next/head";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
+import SkillCard from "../components/Skills";
 
 // Local Data
 import data from "../data/portfolio.json";
 
 export default function Home() {
+  //for darkmode
+  const [mounted, setMounted] = useState();
+
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
@@ -93,14 +98,16 @@ export default function Home() {
 
           <Socials className="mt-2 laptop:mt-5" />
         </div>
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Work.</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+        {/* Projects */}
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+          <h1 className="text-2xl text-bold">Projects</h1>
+
+          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-3 gap-4">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
-                img={project.imageSrc}
+                // img={project.imageSrc}
                 name={project.title}
                 description={project.description}
                 onClick={() => window.open(project.url)}
@@ -109,18 +116,47 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
-          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+        {/* // ParentComponent.js */}
+
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0 flex flex-col items-center">
+          <h1 className="text-2xl font-bold">My Services</h1>
+       
+       
+          <div className="mt-5 grid grid-cols-1 laptop:grid-cols-3 gap-6 max-w-screen-lg w-full">
             {data.services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                name={service.title}
-                description={service.description}
-              />
+            
+                <ServiceCard
+                  name={service.title}
+                  description={service.description}
+                 
+                />
+        
+            ))}
+          </div>
+
+
+        </div>
+
+        {/* Skills */}
+
+        <div className="mt-24 laptop:mt-30 p-2 laptop:p-0 flex flex-col items-center">
+          <h1 className="text-2xl font-bold">My Skills</h1>
+          <div className="mt-5 grid grid-cols-1 laptop:grid-cols-4 gap-2 max-w-screen-lg w-full">
+            {data.skills.map((skill, index, img) => (
+              <div key={index}>
+                <SkillCard 
+                name={skill.title} 
+
+                img={skill.imageSrc}
+                />
+              </div>
             ))}
           </div>
         </div>
+
+
+
+
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
@@ -129,9 +165,9 @@ export default function Home() {
             </Link>
           </div>
         )}
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+        <div className="mt-10 laptop:mt-40 laptop:p-0" ref={aboutRef}>
+          <h1 className="text-2xl text-bold">About Me.</h1>
+          <p className=" mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {data.aboutpara}
           </p>
         </div>
