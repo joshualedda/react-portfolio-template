@@ -13,15 +13,15 @@ import data from "../data/portfolio.json";
 
 const Resume = () => {
   const router = useRouter();
-  const theme = useTheme();
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    if (!showResume) {
-      router.push("/");
-    }
   }, []);
+
+  if (!mounted) return null; // Return null while waiting for the theme to mount
+
   return (
     <>
       {process.env.NODE_ENV === "development" && (
@@ -42,9 +42,7 @@ const Resume = () => {
           <div className="mt-10 w-full flex flex-col items-center">
             <div
               className={`w-full ${
-                mounted && theme.theme === "dark"
-                  ? "bg-slate-800"
-                  : "bg-gray-50"
+                theme === "dark" ? "bg-slate-800" : "bg-gray-100"
               } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
             >
               <h1 className="text-3xl font-bold">{name}</h1>
@@ -140,8 +138,11 @@ const Resume = () => {
                         {resume.languages.map((language, index) => (
                           <li
                             key={index}
-                            className={`py-2 text-white 
-                             ${mounted && theme === "dark" ? "text-white" : "text-gray-900"}`}
+                            className={`py-2 ${
+                              theme === "dark"
+                                ? "text-gray-400"
+                                : "text-gray-600"
+                            }`}
                           >
                             {language}
                           </li>
@@ -158,8 +159,8 @@ const Resume = () => {
                           <li
                             key={index}
                             className={`py-2 ${
-                              mounted && theme === "dark"
-                                ? "text-white"
+                              theme === "dark"
+                                ? "text-gray-400"
                                 : "text-gray-600"
                             }`}
                           >
@@ -178,8 +179,8 @@ const Resume = () => {
                           <li
                             key={index}
                             className={`py-2 ${
-                              mounted && theme === "dark"
-                                ? "text-white"
+                              theme === "dark"
+                                ? "text-gray-400"
                                 : "text-gray-600"
                             }`}
                           >
@@ -198,8 +199,8 @@ const Resume = () => {
                           <li
                             key={index}
                             className={`py-2 ${
-                              mounted && theme === "dark"
-                                ? "text-white"
+                              theme === "dark"
+                                ? "text-gray-400"
                                 : "text-gray-600"
                             }`}
                           >
@@ -218,8 +219,8 @@ const Resume = () => {
                           <li
                             key={index}
                             className={`py-2 ${
-                              mounted && theme === "dark"
-                                ? "text-white"
+                              theme === "dark"
+                                ? "text-gray-400"
                                 : "text-gray-600"
                             }`}
                           >
@@ -238,8 +239,8 @@ const Resume = () => {
                           <li
                             key={index}
                             className={`py-2 ${
-                              mounted && theme === "dark"
-                                ? "text-white"
+                              theme === "dark"
+                                ? "text-gray-400"
                                 : "text-gray-600"
                             }`}
                           >
@@ -258,8 +259,8 @@ const Resume = () => {
                           <li
                             key={index}
                             className={`py-2 ${
-                              mounted && theme === "dark"
-                                ? "text-white"
+                              theme === "dark"
+                                ? "text-gray-400"
                                 : "text-gray-600"
                             }`}
                           >
@@ -278,8 +279,8 @@ const Resume = () => {
                           <li
                             key={index}
                             className={`py-2 ${
-                              mounted && theme === "dark"
-                                ? "text-white"
+                              theme === "dark"
+                                ? "text-gray-400"
                                 : "text-gray-600"
                             }`}
                           >

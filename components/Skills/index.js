@@ -17,13 +17,13 @@ const SkillCard = ({ name, description, img }) => {
           : "hover:bg-slate-50 bg-white"
       } hover:scale-105 link`}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-start">
         <div className="flex items-center space-x-4">
           <div className="rounded-full w-4 h-4 border border-purple-500"></div>
           <div
             className={`text-md font-bold ${
               mounted && theme === "dark" ? "text-white" : "text-gray-800"
-            } hover:scale-105 link`}
+            }`}
           >
             {name ? name : "Heading"}
           </div>
