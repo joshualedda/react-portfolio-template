@@ -14,10 +14,10 @@ import data from "../data/portfolio.json";
 const Resume = () => {
   const router = useRouter();
   const theme = useTheme();
-  const [mount, setMount] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMount(true);
+    setMounted(true);
     if (!showResume) {
       router.push("/");
     }
@@ -38,11 +38,13 @@ const Resume = () => {
         }`}
       >
         <Header isBlog />
-        {mount && (
+        {mounted && (
           <div className="mt-10 w-full flex flex-col items-center">
             <div
               className={`w-full ${
-                mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
+                mounted && theme.theme === "dark"
+                  ? "bg-slate-800"
+                  : "bg-gray-50"
               } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
             >
               <h1 className="text-3xl font-bold">{name}</h1>
@@ -75,20 +77,72 @@ const Resume = () => {
                   <h3 className="text-sm opacity-75">
                     {resume.education.universityDate}
                   </h3>
-                  <p className="text-sm mt-2 opacity-50">
-                    {resume.education.universityPara}
-                  </p>
+                  <ul className="list-disc list-inside">
+                    {resume.education.universityPara
+                      .split(",")
+                      .map((item, index) => (
+                        <li key={index} className="text-sm mt-2 opacity-70">
+                          {item.trim()}
+                        </li>
+                      ))}
+                  </ul>
                 </div>
               </div>
+
+              {/* Trainings */}
+              <div className="mt-5">
+                <h1 className="text-2xl font-bold">Trainings</h1>
+                {resume.training.map((training, index) => (
+                  <div key={index} className="mt-2">
+                    <h2 className="text-lg mt-3">{training.companyName}</h2>
+                    <h3 className="text-sm opacity-75">
+                      {training.trainingDate}
+                    </h3>
+                    <ul className="list-disc list-inside">
+                      {training.activities.split("|").map((item, idx) => (
+                        <li key={idx} className="text-sm mt-2 opacity-70">
+                          {item.trim()}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              {/* Awards */}
+              <div className="mt-5">
+                <h1 className="text-2xl font-bold">Awards</h1>
+                {resume.award.map((award, index) => (
+                  <div key={index} className="mt-2">
+                    <h2 className="text-lg mt-3">{award.awardName}</h2>
+                    <div className="mt-2">
+                      {award.description.split("|").map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="text-sm mt-2 opacity-70 flex items-start"
+                        >
+                          <span className="mr-2 text-gray-600">-</span>
+                          <span>{item.trim()}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Skills</h1>
-                <div className="flex mob:flex-col desktop:flex-row justify-between">
+                <div className="grid grid-cols-1 desktop:grid-cols-2 gap-6">
                   {resume.languages && (
-                    <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Languages</h2>
-                      <ul className="list-disc">
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Languages</h2>
+                      <ul className="list-disc pl-5">
                         {resume.languages.map((language, index) => (
-                          <li key={index} className="ml-5 py-2">
+                          <li
+                            key={index}
+                            className={`py-2 text-white 
+                             ${mounted && theme === "dark" ? "text-white" : "text-gray-900"}`}
+                          >
                             {language}
                           </li>
                         ))}
@@ -96,12 +150,39 @@ const Resume = () => {
                     </div>
                   )}
 
+                  {resume.webDesign && (
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Web Design</h2>
+                      <ul className="list-disc pl-5">
+                        {resume.webDesign.map((design, index) => (
+                          <li
+                            key={index}
+                            className={`py-2 ${
+                              mounted && theme === "dark"
+                                ? "text-white"
+                                : "text-gray-600"
+                            }`}
+                          >
+                            {design}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   {resume.frameworks && (
-                    <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Frameworks</h2>
-                      <ul className="list-disc">
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Frameworks</h2>
+                      <ul className="list-disc pl-5">
                         {resume.frameworks.map((framework, index) => (
-                          <li key={index} className="ml-5 py-2">
+                          <li
+                            key={index}
+                            className={`py-2 ${
+                              mounted && theme === "dark"
+                                ? "text-white"
+                                : "text-gray-600"
+                            }`}
+                          >
                             {framework}
                           </li>
                         ))}
@@ -109,12 +190,99 @@ const Resume = () => {
                     </div>
                   )}
 
+                  {resume.libraries && (
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Libraries</h2>
+                      <ul className="list-disc pl-5">
+                        {resume.libraries.map((library, index) => (
+                          <li
+                            key={index}
+                            className={`py-2 ${
+                              mounted && theme === "dark"
+                                ? "text-white"
+                                : "text-gray-600"
+                            }`}
+                          >
+                            {library}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {resume.database && (
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Database</h2>
+                      <ul className="list-disc pl-5">
+                        {resume.database.map((db, index) => (
+                          <li
+                            key={index}
+                            className={`py-2 ${
+                              mounted && theme === "dark"
+                                ? "text-white"
+                                : "text-gray-600"
+                            }`}
+                          >
+                            {db}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {resume.deployment && (
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Deployment</h2>
+                      <ul className="list-disc pl-5">
+                        {resume.deployment.map((deploy, index) => (
+                          <li
+                            key={index}
+                            className={`py-2 ${
+                              mounted && theme === "dark"
+                                ? "text-white"
+                                : "text-gray-600"
+                            }`}
+                          >
+                            {deploy}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {resume.codeVersion && (
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Code Version</h2>
+                      <ul className="list-disc pl-5">
+                        {resume.codeVersion.map((version, index) => (
+                          <li
+                            key={index}
+                            className={`py-2 ${
+                              mounted && theme === "dark"
+                                ? "text-white"
+                                : "text-gray-600"
+                            }`}
+                          >
+                            {version}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   {resume.others && (
-                    <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Others</h2>
-                      <ul className="list-disc">
+                    <div className="mt-2">
+                      <h2 className="text-lg font-semibold">Others</h2>
+                      <ul className="list-disc pl-5">
                         {resume.others.map((other, index) => (
-                          <li key={index} className="ml-5 py-2">
+                          <li
+                            key={index}
+                            className={`py-2 ${
+                              mounted && theme === "dark"
+                                ? "text-white"
+                                : "text-gray-600"
+                            }`}
+                          >
                             {other}
                           </li>
                         ))}

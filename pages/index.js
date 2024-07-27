@@ -72,25 +72,25 @@ export default function Home() {
           <div className="mt-5">
             <h1
               ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
+              className="text-3xl tablet:text-4xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
             >
               {data.headerTaglineOne}
             </h1>
             <h1
               ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-4xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineTwo}
             </h1>
             <h1
               ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-4xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineThree}
             </h1>
             <h1
               ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-4xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineFour}
             </h1>
@@ -103,11 +103,11 @@ export default function Home() {
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Projects</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-3 gap-4">
+          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-4 gap-4">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
-                // img={project.imageSrc}
+                img={project.imageSrc}
                 name={project.title}
                 description={project.description}
                 onClick={() => window.open(project.url)}
@@ -120,21 +120,15 @@ export default function Home() {
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0 flex flex-col items-center">
           <h1 className="text-2xl font-bold">My Services</h1>
-       
-       
+
           <div className="mt-5 grid grid-cols-1 laptop:grid-cols-3 gap-6 max-w-screen-lg w-full">
             {data.services.map((service, index) => (
-            
-                <ServiceCard
-                  name={service.title}
-                  description={service.description}
-                 
-                />
-        
+              <ServiceCard
+                name={service.title}
+                description={service.description}
+              />
             ))}
           </div>
-
-
         </div>
 
         {/* Skills */}
@@ -144,18 +138,11 @@ export default function Home() {
           <div className="mt-5 grid grid-cols-1 laptop:grid-cols-4 gap-2 max-w-screen-lg w-full">
             {data.skills.map((skill, index, img) => (
               <div key={index}>
-                <SkillCard 
-                name={skill.title} 
-
-                img={skill.imageSrc}
-                />
+                <SkillCard name={skill.title} img={skill.imageSrc} />
               </div>
             ))}
           </div>
         </div>
-
-
-
 
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
@@ -165,12 +152,31 @@ export default function Home() {
             </Link>
           </div>
         )}
+
         <div className="mt-10 laptop:mt-40 laptop:p-0" ref={aboutRef}>
-          <h1 className="text-2xl text-bold">About Me.</h1>
-          <p className=" mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
+          <div className="p-5 laptop:p-0 flex flex-col laptop:flex-row justify-between items-center laptop:items-center gap-1">
+            <div className="flex-1">
+              <h1 className="text-center laptop:text-start text-2xl font-bold">
+                About Me.
+              </h1>
+              <p className="text-center laptop:text-start mt-2 text-xl laptop:text-3xl w-full laptop:w-5/5">
+                {data.aboutpara}
+              </p>
+            </div>
+
+            <div
+              className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 
+              laptop:h-auto flex-1 flex items-center justify-end"
+              style={{ height: "310px" }}
+            >
+              <img
+                className="h-80 hover:scale-110 transition-all ease-out duration-300"
+                src="/images/aboutme.svg"
+              />
+            </div>
+          </div>
         </div>
+
         <Footer />
       </div>
     </div>

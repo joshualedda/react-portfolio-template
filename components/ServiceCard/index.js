@@ -10,8 +10,8 @@ const ServiceCard = ({ name, description }) => {
   }, []);
   return (
     <div
-      className={`rounded-lg shadow-lg p-6 flex flex-col items-center justify-center text-center transition-transform transform hover:scale-105 ${
-        mounted && theme === "dark"
+      className={`rounded-lg shadow-lg p-6 flex flex-col items-center justify-center text-center transition-transform transform hover:scale-105
+         ${ mounted && theme === "dark"
           ? "hover:bg-slate-800 bg-slate-800"
           : "hover:bg-slate-50 bg-white"
       }`}
