@@ -26,9 +26,14 @@ const Resume = () => {
     <>
       {process.env.NODE_ENV === "development" && (
         <div className="fixed bottom-6 right-6">
-          <Button onClick={() => router.push("/edit")} type={"primary"}>
-            Edit Resume
-          </Button>
+          <a
+            target="_blank"
+            href="/pdf/Joshua_Ledda_Resume.pdf"
+            download="Joshua_Ledda_Resume.pdf"
+            className="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700"
+          >
+            Download Resume
+          </a>
         </div>
       )}
       {data.showCursor && <Cursor />}
@@ -37,9 +42,13 @@ const Resume = () => {
           data.showCursor && "cursor-none"
         }`}
       >
+        {/* Navbar */}
         <Header isBlog />
+
         {mounted && (
           <div className="mt-10 w-full flex flex-col items-center">
+            <div></div>
+
             <div
               className={`w-full ${
                 theme === "dark" ? "bg-slate-800" : "bg-gray-100"
@@ -93,9 +102,11 @@ const Resume = () => {
                 {resume.training.map((training, index) => (
                   <div key={index} className="mt-2">
                     <h2 className="text-lg mt-3">{training.companyName}</h2>
+                    
                     <h3 className="text-sm opacity-75">
                       {training.trainingDate}
                     </h3>
+
                     <ul className="list-disc list-inside">
                       {training.activities.split("|").map((item, idx) => (
                         <li key={idx} className="text-sm mt-2 opacity-70">
@@ -290,6 +301,38 @@ const Resume = () => {
                       </ul>
                     </div>
                   )}
+                </div>
+
+                {/* Project List */}
+                <div className="mt-5">
+                  <div className="mt-5">
+                    <h1 className="text-2xl font-bold">Projects</h1>
+                    {resume.project.map((project, index) => (
+                      <div key={index} className="">
+                        <a target="_blank"
+                          href={project.link}
+                          className="text-blue-500 hover:underline"
+                        >
+                          <h2 className="text-lg mt-3">
+                            {project.projectName}
+                          </h2>
+                        </a>
+                        <div className="mt-2">
+                          {project.projectDescription
+                            .split("|")
+                            .map((item, idx) => (
+                              <div
+                                key={idx}
+                                className="text-sm mt-2 opacity-70 flex items-start"
+                              >
+                                <span className="mr-2 text-gray-600">-</span>
+                                <span>{item.trim()}</span>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

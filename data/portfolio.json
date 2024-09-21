@@ -1,8 +1,8 @@
 {
     "name": "Joshua C. Ledda",
     "headerTaglineOne": "Hi 👋",
-    "headerTaglineTwo": "I'm Joshua Ledda ",
-    "headerTaglineThree": "graphic artist and developer",
+    "headerTaglineTwo": "I'm Joshua Ledda, ",
+    "headerTaglineThree": "a web developer and aspiring cybersecurity analyst ",
     "headerTaglineFour": " based in La Union, Philippines.",
     "showCursor": false,
     "showBlog": true,
@@ -21,61 +21,41 @@
         },
         {
             "id": "3",
-            "title": "Twitter",
-            "link": "https://twitter.com/realchetanverma"
-        },
-        {
-            "id": "4",
-            "title": "Blog",
-            "link": "https://blog.chetanverma.com/"
-        },
-        {
-            "id": "5",
             "title": "Email",
-            "link": "mailto:hello@chetanverma.com"
+            "link": "mailto:joshuacledda@gmail.com"
         }
     ],
     "projects": [
         {
             "id": "1",
             "title": "Student Referral System",
-            "description": "Website",
-            "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+            "description": "PHP | Bootsrap | JS",
+            "imageSrc": "/svg/4.jpg",
             "url": "https://dmmmsu-nartdi.com/student-case"
         },
         {
             "id": "3",
-            "title": "Eccomerce",
-            "description": "Website",
-            "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-            "url": "http://chetanverma.com/"
+            "title": "Ecommerce Management System",
+            "description": "PHP Laravel | Tailwind | JS",
+            "imageSrc": "/svg/3.jpg",
+            "url": "https://github.com/joshualedda/Eccomerce"
         },
         {
             "id": "3399795a-02c4-4ca5-9c5f-bd8ece94bd5b",
-            "title": "New Project",
-            "description": "Web Design & Development",
-            "imageSrc": "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-            "url": "http://chetanverma.com/"
+            "title": "Inventory Management System",
+            "description": "Php CodeIgnitter | Bootsrap | JS",
+            "imageSrc": "/svg/2.jpg",
+            "url": "#"
         },
         {
             "id": "9374ce05-9088-4e36-88f7-1e949ca2dc63",
-            "title": "New Project",
-            "description": "Web Design & Development",
-            "imageSrc": "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-            "url": "http://chetanverma.com/"
+            "title": "Document Tracking System",
+            "description": "PHP | Bootsrap | JS",
+            "imageSrc": "/svg/1.jpeg",
+            "url": "https://github.com/joshualedda/Document_Tracking_SAS"
         }
     ],
     "services": [
-        {
-            "id": "1",
-            "title": "Graphic Design",
-            "description": "I offer graphic design services that turn your ideas into reality. Whether you need a new logo, branding materials, website graphics, or promotional content, I create designs that look great and communicate your message clearly. My goal is to make designs that not only catch the eye but also connect with your audience in a meaningful way."
-        },
-        {
-            "id": "2",
-            "title": "Branding",
-            "description": "I design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
-        },
         {
             "id": "3",
             "title": "Web Design",
@@ -156,24 +136,24 @@
             "imageSrc": "/images/bts.svg"
         }
     ],
-    "aboutpara": "Hello! I'm Joshua Ledda, a web developer and graphic designer with a BS in Information Systems, majoring in Service Management Program. I am passionate about creating dynamic web applications, especially with React and Laravel.\n\nI also offer graphic design services, where I create logos, visual identities, and more, blending functionality and aesthetics seamlessly.",
+    "aboutpara": "Hello! I'm Joshua Ledda, a web developer with a BS in Information Systems, majoring in Service Management Program. I am passionate about creating dynamic web applications, especially with Tailwind, JavaScript, and Laravel. I'm also an aspiring cybersecurity analyst, aiming to deepen my knowledge and skills in securing websites and solving cyber-related challenges",
     "resume": {
-        "tagline": "I'm a web developer and graphic designer.",
-        "description": "Detail-oriented entry-level developer passionate about web development and graphic design. Committed to creating efficient, user-friendly solutions. Quick learner dedicated to continuous improvement and eager to contribute to innovative projects.",
+        "tagline": "I'm a web developer and an aspiring cyber security analyst.",
+        "description": "Detail-oriented entry-level developer passionate about web development and aspiring to cybersecurity. Committed to creating efficient, user-friendly solutions. Quick learner dedicated to continuous improvement and eager to contribute to innovative projects.",
         "experiences": [
             {
                 "id": "1",
                 "dates": "July 2024",
                 "type": "Full Time",
-                "position": "ICT Officer",
-                "bullets": "Bullet One, Bullet Two"
+                "position": "IT",
+                "bullets": "Office Assistant ICT"
             },
             {
                 "id": "d495c23b-4f65-479a-9b8a-cfbc1c089725",
                 "dates": "February - April 204",
                 "type": "On The Job-Training",
                 "position": "Web Developer",
-                "bullets": "Worked on different websites, including e-commerce platforms"
+                "bullets": "Worked on different websites, Collaborated and created systems with other interns."
             }
         ],
         "education": {
@@ -193,7 +173,13 @@
             "id": 2,
             "companyName": "Online Coding Training for Teachers ",
             "trainingDate": "Armada Logics, July 8-10 2024",
-            "activities": "Participate and Engage in the Ai Prompt Engineering Training | Participate and Engage in Advanced UI/UX Concepts Training | Participate and Engage in Web Fundamental Training"
+            "activities": "Participated and Engage in the Ai Prompt Engineering Training | Participated and Engage in Advanced UI/UX Concepts Training | Participated and Engage in Web Fundamental Training"
+        },
+        {
+            "id": 2,
+            "companyName": "PICSProfessionals Philippine Institute of Cyber Security Professionals Training",
+            "trainingDate": "August 01 - September 20, 2024",
+            "activities": "Participated and Engaged in training at Antarex Blue SOC Analyst. | Participated and Engage in training at Basic Vulnerability Assesment and Management | Participated and Engage training at GRC: Operational and Tactical Levels | Participated and Engage training at ESET Cybersecurity Awareness and ESET Protect Training"
         }
         ],
         "award":  [
@@ -211,6 +197,25 @@
             "id": 3,
             "awardName": " Test of Practical Competency in IT (TOPCIT) Passer ",
             "description": "Passed the  Test Of Practical Competency in IT (TOPCIT) examination in November 2023."
+        },
+        {
+            "id": 4,
+            "awardName": " Certified Antarex Blue SOC Analyst ",
+            "description": "Completed all the requirments to qualify as a Certified Antarex SOC Analyst."
+        }
+        ],
+        "project":  [
+        {
+            "id": 1,
+            "link": "https://dmmmsu-nartdi.com/student-case/", 
+            "projectName": "Eccomerce Web App",
+            "projectDescription": "The front-end and back-end were developed using Bootstrap, jQuery, PHP CodeIgniter, and MySQL in just 7 days. The application features an admin dashboard, product catalogs, detaile. Additionally, the app design includes an Entity-Relationship Diagram (ERD), security measures, and session management."
+        },
+        {
+            "id": 2,
+            "link": "https://youtu.be/rfZZjILFCLE", 
+            "projectName": "Student Refferal System",
+            "projectDescription": "The front-end and back-end were developed using Tailwind CSS, PHP Laravel, Laravel Livewire, and jQuery in just one month. Features include admin and staff dashboards, user, referral, and student management, referral submission and tracking, notifications, intervention tracking, reporting, audit trail, and student profiles. The app design also includes security measures, and session management."
         }
         ],
         "languages": [
@@ -237,8 +242,7 @@
         ],
         "database": [
             "MySql",
-            "PostgreSql",
-            "SqLite"
+            "PostgreSql"
         ],
         "deployment": [
             "Docker",
@@ -250,8 +254,7 @@
         ],
         "others": [
             "Adobe Photoshop",
-            "Canva",
-            "AWS"
+            "Canva"
         ]
     }
 }

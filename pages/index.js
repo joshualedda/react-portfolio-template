@@ -100,10 +100,10 @@ export default function Home() {
         </div>
 
         {/* Projects */}
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Projects</h1>
+        <div className="mt-10 laptop:mt-30 laptop:p-0 flex-col items-center" ref={workRef}>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-4 gap-4">
+          <h1 className="text-2xl font-bold">Projects</h1>
+          <div className="mt-1 grid grid-cols-1 laptop:grid-cols-4 gap-2 max-w-screen-lg w-full">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
@@ -118,7 +118,7 @@ export default function Home() {
 
         {/* // ParentComponent.js */}
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0 flex flex-col items-center">
+        {/* <div className="mt-10 laptop:mt-30 p-2 laptop:p-0 flex flex-col items-center">
           <h1 className="text-2xl font-bold">My Services</h1>
 
           <div className="mt-5 grid grid-cols-1 laptop:grid-cols-3 gap-6 max-w-screen-lg w-full">
@@ -129,11 +129,11 @@ export default function Home() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Skills */}
 
-        <div className="mt-24 laptop:mt-30 p-2 laptop:p-0 flex flex-col items-center">
+        <div className="mt-24 laptop:mt-30 p-2 laptop:p-0 flex flex-col">
           <h1 className="text-2xl font-bold">My Skills</h1>
           <div className="mt-5 grid grid-cols-1 laptop:grid-cols-4 gap-2 max-w-screen-lg w-full">
             {data.skills.map((skill, index, img) => (
