@@ -133,7 +133,7 @@ export default function Home() {
 
         {/* Skills */}
 
-        <div className="mt-24 laptop:mt-30 p-2 laptop:p-0 flex flex-col">
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0 flex flex-col">
           <h1 className="text-2xl font-bold">My Skills</h1>
           <div className="mt-5 grid grid-cols-1 laptop:grid-cols-4 gap-2 max-w-screen-lg w-full">
             {data.skills.map((skill, index, img) => (
@@ -145,13 +145,13 @@ export default function Home() {
         </div>
 
         {/* This button should not go into production */}
-        {process.env.NODE_ENV === "development" && (
+        {/* {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
             <Link href="/edit">
               <Button type="primary">Edit Data</Button>
             </Link>
           </div>
-        )}
+        )} */}
 
         <div className="mt-10 laptop:mt-40 laptop:p-0" ref={aboutRef}>
           <div className="p-5 laptop:p-0 flex flex-col laptop:flex-row justify-between items-center laptop:items-center gap-1">
@@ -159,7 +159,7 @@ export default function Home() {
               <h1 className="text-center laptop:text-start text-2xl font-bold">
                 About Me.
               </h1>
-              <p className="text-center laptop:text-start mt-2 text-xl laptop:text-3xl w-full laptop:w-5/5">
+              <p className="text-center  laptop:text-start mt-2 text-xl laptop:text-3xl w-full laptop:w-5/5">
                 {data.aboutpara}
               </p>
             </div>

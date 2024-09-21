@@ -28,8 +28,8 @@ const Resume = () => {
         <div className="fixed bottom-6 right-6">
           <a
             target="_blank"
-            href="/pdf/Joshua_Ledda_Resume.pdf"
-            download="Joshua_Ledda_Resume.pdf"
+            href="/pdf/Joshua_Ledda_CV.pdf"
+            download="Joshua_Ledda_CV.pdf"
             className="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700"
           >
             Download Resume

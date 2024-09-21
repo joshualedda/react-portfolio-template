@@ -15,11 +15,11 @@ const SkillCard = ({ name, description, img }) => {
         mounted && theme === "dark"
           ? "hover:bg-slate-800 bg-slate-800"
           : "hover:bg-slate-50 bg-white"
-      } hover:scale-105 link`}
+      } hover:scale-100 link`}
     >
       <div className="flex items-center justify-start">
         <div className="flex items-center space-x-4">
-          <div className="rounded-full w-4 h-4 border border-purple-500"></div>
+          
           <div
             className={`text-md font-bold ${
               mounted && theme === "dark" ? "text-white" : "text-gray-800"
@@ -39,7 +39,7 @@ const SkillCard = ({ name, description, img }) => {
       </div> */}
       <img
         alt={name}
-        className="w-8 h-10 hover:scale-110 transition-all ease-out duration-300"
+        className="w-8 h-10 hover:scale-125 transition-all ease-out duration-300"
         src={img}
       />
     </div>
