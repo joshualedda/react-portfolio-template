@@ -309,10 +309,12 @@ const Resume = () => {
                     <h1 className="text-2xl font-bold">Projects</h1>
                     {resume.project.map((project, index) => (
                       <div key={index} className="">
-                        <a target="_blank"
-                          href={project.link}
-                          className="text-blue-500 hover:underline"
-                        >
+                       <a
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    href={project.link}
+                    className="text-blue-500 hover:underline"
+                  >
                           <h2 className="text-lg mt-3">
                             {project.projectName}
                           </h2>
